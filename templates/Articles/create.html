@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block creating %}
+<br>
+{% if not created %}
+    <form method="POST" Action="/Articles/create/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div><button type="submit">Save</button></div>
+    </from>
+
+{% elif created %}
+<ul>
+    {% for obj in objects %}
+        <li>
+            <a href="/Titles/{{ obj.id }}/">{{ obj.title }}</a> - <a href="/Articles/{{ obj.id }}/">{{ obj.content }}</a>
+        </li>
+    {% endfor %}
+    <br/>
+    <a href="/Articles/create/"><button>create topic</button></a>
+</ul>
+
+{% endif %}
+{% endblock creating %}

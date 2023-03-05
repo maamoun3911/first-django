@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head></head>
+    <body>
+        <div>
+            <p>Hello to Hello, World! From Base HTML file</p>
+
+            <form method="GET" action="/search_Article/">
+                <input type="text" name="q"/>
+                <input type="submit">
+            </form>
+        </div>
+        <br>
+
+        {% block login%}{% endblock login%}
+
+        {% block logout%}{% endblock logout%}
+        
+        {% block creating %}{% endblock creating %}
+
+        {% block search %}{% endblock search %}
+
+        {% block home %}{% endblock home %}
+
+        {% block title_view %}{% endblock title_view %}
+
+        {% block article_view %}{% endblock article_view %}
+
+        {% block signup %}{% endblock signup %}
+        <br>
+        <br>
+    </body>
+
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block signup %}
+
+{% if not request.user.is_authenticated %}
+    <div class="sing_up">
+        <form method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">create account</button>
+        </form>
+        <p>
+            already have an account <a href="/accounts/login/">log in</a>
+        </p>
+    </div>
+{% else %}
+<p>
+    You're already logged in, Do you want to <a href="/accounts/logout/">log out</a>
+</p>
+
+{% endif %}
+
+{% endblock signup %}
